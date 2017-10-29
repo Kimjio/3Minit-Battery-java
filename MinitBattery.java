@@ -41,15 +41,13 @@ public class MinitBattery extends RelativeLayout {
     private int mMidLevel = 50;
     private TextView mPercent;
     private ResourceManager mRM;
-    private BroadcastReceiver mReceiver = new C01481();
+    private BroadcastReceiver mReceiver = new MinitBatteryReceiver();
     private int mStatus;
     private int mTextColor = -1;
     private int mTextSize = 30;
     private int mWorkingType = 0;
 
-    class C01481 extends BroadcastReceiver {
-        C01481() {
-        }
+    class MinitBatteryReceiver extends BroadcastReceiver {
 
         public void onReceive(Context context, Intent intent) {
             if (intent.getAction().equals("android.intent.action.BATTERY_CHANGED")) {
